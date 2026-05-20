@@ -1,0 +1,44 @@
+﻿.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+/* CARD */
+.project-card {
+    background: var(--color-surface);
+    border-radius: 12px;
+    overflow: hidden; /* keeps image inside rounded corners */
+
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* Hover effect (important!) */
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.project-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.project-content {
+    padding: 1rem;
+}
+
+.project-content h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.project-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
