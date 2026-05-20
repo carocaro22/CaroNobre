@@ -1,41 +1,59 @@
 ﻿.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
     gap: 1.5rem;
-    max-width: 1000px;
+    justify-content: center;
     margin: 2rem auto;
 }
 
-/* CARD */
 .project-card {
     background: var(--color-surface);
     border-radius: 12px;
-    overflow: hidden; /* keeps image inside rounded corners */
-
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
     cursor: pointer;
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
-/* Hover effect (important!) */
+a.project-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-/* IMAGE */
+/* ✅ IMAGE */
 .project-image {
     width: 100%;
     height: 160px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
 }
 
-/* CONTENT */
+/* ✅ ZOOM */
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* ✅ CONTENT */
 .project-content {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .project-content h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .project-content p {

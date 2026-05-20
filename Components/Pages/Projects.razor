@@ -1,35 +1,22 @@
 ﻿@page "/projects"
 
 <div class="projects-grid">
+    @foreach (var project in projects)
+    {
+        <a href="@project.Url"
+            target="_blank"
+            class="project-card">
 
-    
-    <a href="https://github.com/carocaro22/AURIX-Concurrency"
-       target="_blank" 
-       class="project-card">
+            <img src="@project.ImageUrl"
+                    alt="@project.Title"
+                    class="project-image" />
 
-        <img src="images/aurix.jpg" alt="Profile picture" class="profile-image" />
-        <div class="project-content">
-            <h3>Exploring Multicore Parallelism</h3>
-            <p>Analysing tasks and concurrency on a single and multiple cores using an Aurix TC375LK.</p>
-        </div>
-    </a>
+            <div class="project-content">
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+            </div>
 
-    <div class="project-card">
-        https://via.placeholder.com/300x180
-
-        <div class="project-content">
-            <h3>Embedded AI (MAX78000)</h3>
-            <p>Deploying lightweight ML models on ultra-low-power hardware.</p>
-        </div>
-    </div>
-
-    <div class="project-card">
-        https://via.placeholder.com/300x180
-
-        <div class="project-content">
-            <h3>Portfolio Website</h3>
-            <p>This website built with Blazor and custom styling.</p>
-        </div>
-    </div>
+        </a>
+    }
 
 </div>
